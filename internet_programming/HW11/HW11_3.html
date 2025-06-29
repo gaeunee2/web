@@ -1,0 +1,59 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>날짜</title>
+</head>
+<body>
+  <p id="w1"></p>
+  <h3 id="d1"></h3><hr>
+  <p id="w2"></p>
+  <h3 id="d2"></h3><hr>
+  <p id="w3"></p>
+  <h3 id="d3"></h3><hr>
+  <script>
+    const days = ["2025-12-25 01:01:01", 
+                "2025-10-30 01:01:01", 
+                "2026-02-20 01:01:01"];
+
+    let today = new Date();
+    let year = today.getFullYear() + ". "
+    let day = (today.getMonth()+1) + ". " + today.getDate() + ". ";
+    let time = "";
+    if (today.getHours() < 12) {
+      time = "오전 " + today.getHours() + ":" 
+                      + today.getMinutes() + ":" 
+                      + today.getSeconds();
+    } 
+    else {
+      time = "오후 " + (today.getHours() - 12) + ":" 
+                      + today.getMinutes() + ":" 
+                      + today.getSeconds();
+    }
+
+    days.forEach((dateStr, index) => {
+      const targetDate = new Date(dateStr.replace(" ", "T"));
+      const diffMs = targetDate - today;
+
+      document.getElementById("w" + (index + 1)).innerHTML = year + day + time + "부터 " + dateStr + "까지";
+
+      let output = "";
+      if (diffMs > 0) {
+        const diffSec = Math.floor(diffMs / 1000);
+        const daysLeft = Math.floor(diffSec / (60 * 60 * 24));
+        const hoursLeft = Math.floor((diffSec % (60 * 60 * 24)) / 3600);
+        const minutesLeft = Math.floor((diffSec % 3600) / 60);
+        const secondsLeft = diffSec % 60;
+
+        output += daysLeft + "일 " + hoursLeft + "시간 " 
+               + minutesLeft + "분 " + secondsLeft + "초 남았습니다.";
+      } else {
+        output += "이미 지났습니다.";
+      }
+      document.getElementById("d" + (index + 1)).innerHTML = output;
+  });
+  </script>
+</body>
+</html>

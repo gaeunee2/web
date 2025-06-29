@@ -1,0 +1,224 @@
+html 주석: <!-- -->
+
+*글로벌 속성 (모든 태그에 공통적으로 사용 가능)
+class="클래스명" (동일한 문서 내 여러 개의 태그에 동일한 이름 지정 가능)
+id="아이디명" (문서 내 해당 태그 유일하게 식별)
+lang="ko"
+style="CSS선언"
+hidden="hidden" (<p hidden>도 가능)
+
+구분선: <hr>
+
+*요소에 사용할 수 있는 속성
+align="left, center, right" (정렬)
+noshade="noshade" (입체감 제거)
+size="px" (두께)
+width="px, %" (넓이)
+
+문서에서 !enter -> 기본 코드 자동 생성 (lang ko로 바꾸기)
+
+스페이스바 &nbsp;
+< &lt; 
+> &gt;
+& &amp;
+# &num;
+
+<hn> 제목
+<p> 단락
+<br> 줄 바꾸기 (닫는 태그X)
+<blockquote> 인용문 (안으로 들여쓰기)
+<pre> 사용자 입력 그대로 화면 표시
+
+*텍스트 관련 태그
+<b> (볼드체)
+<em> (강조)
+<i> (이탤릭체)
+<small> (작게)
+<strong> (중요 내용)
+<sub> (아래첨자) <sup> (윗첨자)
+<ins> (아래 밑줄)
+<del> (가운데 선)
+<mark> (하이라이트)
+
+*하이퍼링크
+<a href="URL" [속성="속성값]>텍스트</a>
+<a href="URL"  [속성="속성값"]><img src=“이미지파일경로”></a>
+
+절대경로vs상대경로
+href="http://www.w3.org/index.html"
+href="hello.html" (<base> 태그에 기본 URL 지정)
+
+*<a>태그 사용 속성
+href (링크한 문서나 사이트 주소 입력)
+target (링크한 내용이 표시될 위치 지정)
+download (링크 다운로드)
+type (링크한 문서 파일 유형)
+
++하이퍼링크 글자색 바꾸기
+a:link { color : pink; } 방문하지 않은 링크 글자색
+a:visited { color : black; } 방문한적 있는 링크 글자색
+a:hover { color : red; } 마우스 링크에 올려뒀을 때 글자색
+a:active { color : green; } 링크 클릭하고 뗄 때까지 글자색
+text-decoration: none; underline;
+
+*target 속성값
+_blank (새로운 웹 브라우저 창에)
+_self (현재 웹 브라우저 창_default)
+_parent (부모 웹 브라우저 창)
+_top (웹 브라우저 전체 영역)
+
+문서 내 특정 위치 이동 - 앵커 (이동하고 싶은 위치마다 id 속성 이용)
+<태그 id="앵커 이름">텍스트or이미지</태그>
+<a href="#앵크 이름">텍스트or이미지</a>
+
+이메일 링크
+<a href="mailto:이메일 주소">내용</a>
+<a href="mailto:gosyhong@gmail.com">받는 사람</a><br />
+
+순서 없는 목록: <ul> <li>
+순서 있는 목록: <ol> <li> (각 항목 기본값 type="1")
+정의형: <dl> <dt> (설명은 <dd>)
+
+표 **body-section 내부
+<table>
+<tr> 행 <td> 열 <th> 머리(셀 제목 글자 강조)
+
+셀 병합 rowspan(셀 세로 병합) colspan(셀 가로 병합)
+<td colspan="3">열병합</td>
+<td rowpan="2">행병합</td>
+
+표 제목 <caption> (위 중앙에 표시, 테이블 태그 뒤에 두면 아래)
+
+시맨틱 태그 (표 구조 정의)
+<thead> 표 머리말 부분
+<tbody> 표 본문부분
+<tfoot> 표 꼬리말부분(요약)
+
+임베디드 콘텐츠 태그: 멀티미디어 데이터를 웹 문서에 포함할 때 사용
+<img> 이미지 파일 삽입
+<canvas> 그래픽 그리기
+<audio> 오디오 파일 삽입
+<video> 동영상 파일 삽입
+<track> 미디어 요소 트랙 삽입
+<source> 미디어 소스 삽입
+<embed> 개체 삽입
+
+
+*<img src=이미지파일 경로 [속성="속성값" ...]>
+ex) <img src="coffee.jpg" with="100"  alt="커피">
+
+<img> 태그 속성
+src, alt, width/height, style, border (이미지 파일 형식은 jpg, gif, png등)
+
+이미지 예시~.~ (스타일이랑 속성 콤마를 유의하라)
+title="로고 이미지" style="float:right, width:50px, height:60px"
+width=50% height=40% 
+
+이미지에 링크를 걸자~~ ㅇㅇ이것은 쉬우니까
+
+<figure>
+	<figcaption>[그림1]</figcaption>
+</figure>
+
+
+오디오*
+<audio  src="audio_file.mp3"  controls loop autoplay></audio>
+<audio>태그 속성
+src, controls, loop, autoplay, muted, preload (오디오 파일 형식은 mp3, ogg, wav 등)
+
+<source>태그: 여러 형식의 오디오 파일 동시 제공
+<audio controls>
+	<source src="chicken.mp3" type="audio/mpeg">
+	<source src="chicken.ogg" type="audio/ogg">
+	오디오 파일을 재생할 수 없습니다.
+ </audio>
+
+비디오*
+<video  src="audio_file.mp3"  controls loop autoplay></video>
+<video> 태그 속성
+src, controls, width/height, loop, autoplay, muted, preload, poster (비디오 형식은 mp4, ogv, webm 등)
+
+<source>로 여러개 ㅇㅇ
+<video controls autoplay width="300"height="250">
+	<sourcesrc="small.mp4"type="video/mpeg">
+ 	<sourcesrc="small.ogv"type="video/ogg">
+비디오 파일을 재생할 수 없습니다.
+</video> 
+
+
+웹 양식: 웹 문서에 데이터 입력/결과값 가져오기 위해 사용
+<form action="page.jsp" method="get">
+	<input type="text" name="name">
+	<input type="submit" value="전송">
+	<input type="reset" value="다시 작성">
+</form>
+
+폼태그(웹 양식)
+form 속성: action, method, name, target
+
+method속성에서 사용 방식 GET/POST
+get은 입력 내용 웹브라우저에 보여짐+글자수 제한
+post는 X(보안)
+
+input태그
+type 속성 유형: text, password, email, tel, date, url, hidden, search(Type은 x표시 생김), datetime(-local), month, week, time, number, range, color, checkbox, radio, file, submit, image, reset, button
+
+<input type="text" size="10" maxlength="5"/>
+
+텍스트 공간 입력**
+<textarea rows="행 수" cols="열 수">초기값</textarea>
+
+입력폼 여러개->경계선 그려서 하나의 그룹으로 <fieldset></fieldset>
+필드셋 요소 캡션 -> <legend>캡션</legend>
+
+버튼
+<button type="butthon" onclick="alert('클릭-1)">클릭1</button>
+<input type="button" onclick="alert('클릭-2)" value="클릭2">
+<button type="button" onclick="alert('클릭-3)"><img src="button.jpg">
+
+선택 목록(목록에서 하나 선택)
+<select name="subjects" size="4" multiple>
+	<option value="1" selected>html</option>
+	<option value="2">javascript</option>
+</select>
+
+**radio는 checked
+
+<optgroup> 여러 항목 그룹으로 묶기
+<select name="major">
+	<optgroup label="computer">
+		<option>Software</option>
+		<option>Robot</option>
+ 	</optgroup>
+</select>
+
+<datalist> 텍스트 입력 시 자동완성!!
+<input type="text" list="majorlist" name="major">
+<datalistid="majorlist">
+	<optionvalue="Software">소프트웨어</option>
+ 	<optionvalue="Robot">로봇</option>
+</datalist>
+
+type 속성값
+date (날짜/시간), month (년-월), week (년-주), time (시간), datetime (년-월-일-시간)
+<input type="date" name="today">
+<input type="date" name="from" min="2016-03-01" max="2016-12-31">
+
+<input type="color"> 색상 칩에서 원하는 색상 선택!
+<input type="color" name="color_value" value= "#0000ff">
+
+막대 그래프~~
+<meter> 지정된 값 표현
+<progress> 현재 진행율(다운로드 상태 표시 같은 거)
+<metermin="0" max="100" optimum="50" value="60">60 out of 100</meter><br>
+
+<progressvalue="22"max="100"title="진행율">22%</progress><br>
+<progressvalue="0.77"max="1">77%</progress><br>
+
+입력 양식 주요 속성
+readonly, 비활성화 disabled, 자동 완성 autocomplete="on", 자동 포커스 autofocus, 임시 채우기 placeholder="", 필수 입력 required, 오타 체크 spellcheck="ture"
+
+
+<iframe src="삽입할페이지주소" width="너비" height="높이"></iframe>
+외부 style은 <title> 아래
+<link href="css/style.css" type="text/css" rel="stylesheet">

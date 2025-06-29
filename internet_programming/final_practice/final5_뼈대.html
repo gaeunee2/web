@@ -1,0 +1,51 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>final5.html</title>
+    <style>
+        #container  { width: 250px; margin: auto; }
+		img         { border: 1px solid; }
+		.small      { width: 50px; height: 50px; }
+		#big        { width: 250px; height: 250px; }	
+	</style>
+</head>
+<body>
+    <div id="container">
+        <div id="small-pic">
+            <img src="images/img2_s.png" big_src="images/img2_b.png" class="small" 
+                onmouseover="onMouseIn(this)" onclick="onClick(this)">
+            <img src="images/img3_s.png" big_src="images/img3_b.png" class="small" 
+                onmouseover="onMouseIn(this)" onclick="onClick(this)">
+            <img src="images/img4_s.png" big_src="images/img4_b.png" class="small" 
+                onmouseover="onMouseIn(this)" onclick="onClick(this)">
+            <img src="images/img5_s.png" big_src="images/img5_b.png" class="small" 
+                onmouseover="onMouseIn(this)" onclick="onClick(this)">
+        </div>
+        <div>
+            <img src="images/img2_b.png" id="big"
+                onmouseover="showPath()"
+                onmouseout="resetText()">
+            <p>큰 이미지 위에 마우스 올려봐</p>
+        </div>
+    </div> 
+<script>
+    function onMouseIn(obj) {
+        obj.style.cursor = "pointer";
+    }
+    function onClick(obj) {
+        document.getElementById("big").src = obj.getAttribute("big_src");
+    }
+    function showPath() {
+      let path = document.getElementById("big").src;
+      document.getElementsByTagName("p")[0].innerText = "이미지 경로: "+ path;
+    }
+    function resetText() {
+      document.getElementsByTagName("p")[0].innerText = "큰 이미지 위에 마우스 올려봐";
+    }
+</script>
+</body>
+</html>

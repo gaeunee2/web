@@ -1,0 +1,26 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+ <!DOCTYPE html>
+ <html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별가로막대</title>
+ </head>
+ <body>
+    <script>
+        function drawStar(num) {
+            for(let i=0; i<num; i++) {
+                document.write("*");
+            }
+            document.write("(" + num + ")<br>");
+        }
+
+        const nums = [20, 5, 8, 15, 12];
+        document.write("<h1>원본데이터: " + nums.join() + "</h1><hr>");
+        for(let i of nums) {
+            drawStar(i);
+        }
+        document.write("<hr>");
+    </script>
+ </body>
+ </html>

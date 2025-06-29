@@ -1,0 +1,47 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제4</title>
+    <style>
+        #container  { width: 250px; margin: auto; }
+		img         { border: 1px solid; }
+		.small      { width: 50px; height: 50px; }
+		#big        { width: 250px; height: 250px; }	
+
+	</style>
+</head>
+<body>
+    <div id="container">
+        <div id="small-pic">
+            <img src="images/img2_s.png" big_src="images/img2_b.png" class="small" onclick="changeImg(this)">
+            <img src="images/img3_s.png" big_src="images/img3_b.png" class="small" onclick="changeImg(this)">
+            <img src="images/img4_s.png" big_src="images/img4_b.png" class="small" onclick="changeImg(this)">
+            <img src="images/img5_s.png" big_src="images/img5_b.png" class="small" onclick="changeImg(this)">
+        </div>
+        <div>
+            <img id="big" onclick="displayPath(this)" onmouseleave="removePath()">        
+        </div>
+        <div id="path"></div>
+    </div> 
+    <script>
+        function changeImg(obj) {
+            document.getElementById("big").setAttribute("src", obj.getAttribute("big_src"));
+        };
+        function displayPath() {
+            let path = document.getElementById("big").getAttribute("src");
+            document.getElementById("path").innerHTML = "<h3>경로: "+ path + "</h3>"; //한줄로 표시되게
+        };
+        function removePath() {
+            document.getElementById("path").remove();
+
+            const newDiv = document.createElement("div");
+            newDiv.setAttribute("id", "path");
+
+            document.getElementById("container").appendChild("newDiv");
+        };
+    </script>
+ </body>
+</html>

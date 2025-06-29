@@ -1,0 +1,42 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>HW9_2</title>
+  <style>
+    #red {
+        color: red;
+    }
+    #green {
+        color: green;
+    }
+    #blue {
+        color: blue;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var sum = 0;
+    var evenSum = 0;
+    var oddSum = 0;
+
+    var i = 1;
+    while(i <= 100) {
+      sum += i;
+
+      if(i % 2 == 0) {
+        evenSum += i;
+      }
+      else {
+        oddSum += i;
+      }
+      i++;
+    }
+    document.write("<h1 id='red'>1~100까지 합 : " + sum);
+    document.write("<h1 id='green'>1~100까지 짝수의 합 : " + evenSum);
+    document.write("<h1 id='blue'>1~100까지 홀수의 합 : " + oddSum);
+  </script>
+</body>
+</html>

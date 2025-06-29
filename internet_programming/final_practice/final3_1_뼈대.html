@@ -1,0 +1,54 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>final3_1.html</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    table {
+      margin: auto;
+    }
+    th{
+      text-align:right;
+    }
+    td {
+      padding:5px;
+      border:1px solid #ccc;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <h1>좌식 배치표</h1>
+</div>
+<script>
+  let total = prompt("학생수는 몇 명인가요?");
+  let num = prompt("한 줄에 앉을 수 있는 학생수는 몇 명일까요?");
+
+  document.write("<table>");
+  document.write("<tr>");
+  document.write("<th colspan='" + num + "'>앞문</th>");
+  document.write("</tr>");
+  
+  for(let i=0; i<total/num+1; i++) {
+    document.write("<tr>");
+    for(let j=0; j<num; j++) {
+      if((i*4+j+1) > total) {
+        break;
+      }
+      document.write("<td>좌석 " + (i*4+j+1) + "</td>");
+    }
+    document.write("</tr>");
+  }
+  document.write("<tr>");
+  document.write("<th colspan='" + num + "'>뒷문</th>");
+  document.write("</tr>");
+  document.write("</table>");
+</script>
+</body>
+</html>

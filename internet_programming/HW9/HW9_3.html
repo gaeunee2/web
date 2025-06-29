@@ -1,0 +1,40 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학점</title>
+</head>
+<body>
+  <script>
+    let sum = 0;
+    let s = "";
+    let grade = '';
+
+    for(var i = 0; i < 3; i++) {
+      let score = parseInt(prompt("점수" + (i+1) + "를 입력하시오"));
+      sum += score;
+    }
+    let avg = sum / 3;
+    if(avg >= 90) {
+      s = "아주 잘했어요.";
+      grade = 'A';
+    }
+    else if(avg >= 80) {
+      s = "잘했어요.";
+      grade = 'B';
+    }
+    else if(avg >= 70) {
+      s = "조금만 노력하면 잘 할 수 있어요.";
+      grade = 'C';
+    }
+    else {
+      s = "많이 노력하시기 바랍니다.";
+      grade = 'F';
+    }
+    document.write(avg.toFixed(2) + ": " + s + "<br>");
+    document.write("학생의 학점은 " + grade + "입니다.");
+  </script>
+</body>
+</html>

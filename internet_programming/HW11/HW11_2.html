@@ -1,0 +1,45 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>총영업이익</title>
+  <style>
+    #red {
+      color: red;
+      font-style: italic;
+    }
+    #box {
+      border: 1px solid red;
+      width: 400px;
+      height: 70px;
+      padding-top: 35px;
+      padding-left: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>총 영업 이익 구하기</h1>
+  분기별 영업이익이 다음과 같이 <a id="red">객체로 저장</a>되어 있을 때 총영업이익은 얼마일까요?<br><br>
+  {"1분기":4500, "2분기":5000, "3분기":3400, "4분기":1200}<hr>
+  <h1>여기부터 자바스크립트 코드 결과</h1>
+
+  <script>
+    let income = {
+      1: 4500,
+      2: 5000,
+      3: 3400,
+      4: 1200,
+      total: function() {
+        return this[1]+this[2]+this[3]+this[4];
+      }
+    };
+
+    for(let i=1; i<=4; i++) {
+      document.write(i + "분기: " + income[i] + "<br>");
+    }
+    document.write("<h3 id='box'>총영업이익은 " +income.total() + " 이다.</h3>");
+  </script>
+</body>
+</html>

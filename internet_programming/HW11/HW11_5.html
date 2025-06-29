@@ -1,0 +1,52 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학생정보</title>
+</head>
+<body>
+  <script>
+    function Student(name, score1, score2) {
+      this.name=name;
+      this.score1=score1;
+      this.score2=score2;
+
+      this.printInfo = function() {
+        document.writeln("학생이름: " + this.name + "<br>");
+        document.writeln("인프 점수: " + this.score1 + "<br>");
+        document.writeln("자바 점수: " + this.score2 + "<br><br>");
+      };
+      this.avg = function() {
+        let total = this.score1+this.score2;
+        document.writeln("총점: " + total + "<br>");
+        return total / 2;
+      };
+      this.grade = function() {
+        if(this.avg() >= 70) {
+          return 'A';
+        }
+        else if(this.avg() >= 40) {
+          return 'B';
+        }
+        else {
+          return 'C';
+        }
+      }
+    };
+    let students=[
+      new Student("신짱구", 90, 80),
+      new Student("최자두", 70, 60),
+      new Student("코난", 30, 40),
+      new Student("홍길동", 80, 40),
+    ];
+
+    for(let i=0; i<4; i++) {
+      students[i].printInfo();
+      document.writeln("평균: "+ students[i].avg() + "<br>");
+      document.writeln("학점: " + students[i].grade() + "<hr>");
+    }
+  </script>
+</body>
+</html>

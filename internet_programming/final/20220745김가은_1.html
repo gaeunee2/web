@@ -1,0 +1,35 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>문제1</title>
+</head>
+<body>
+	<script>
+		let num1 = parseInt(prompt("첫 번째 정수를 입력하세요:"));
+		let num2 = parseInt(prompt("두 번째 정수를 입력하세요:"));
+
+		let arr = [];
+		let index = 0;
+		let count = 0;
+		for(let i=1; i<=num1; i++) {
+			if(num1 % i == 0) {
+				arr[index++] = i;
+			}
+		}
+		for(let i=1; i<=num2; i++) {
+			if(num2 % i == 0) {
+				for(let j=0; j<index; j++) {
+					if(i == arr[j]) {
+						count += 1;
+						break;
+					}
+				}
+			}
+		}
+		document.write("<h1>공약수의 개수는 " + count + "개입니다.</h1>");
+	</script>
+</body>
+</html>

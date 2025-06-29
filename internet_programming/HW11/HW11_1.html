@@ -1,0 +1,48 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구구단_2차원배열</title>
+  <style>
+    table {
+      border: 1px solid black;
+      margin: 0 auto;
+    }
+    th, td {
+      border: 1px solid;
+      padding: 2px 10px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    let a=[];
+
+    for(let i=0; i<9; i++) {
+      a[i]=[];
+      for(let j=0; j<9; j++) {
+        a[i][j] = (j+1)*(i+1);
+      }
+    }
+
+    document.write("<table>");
+    document.write("<tr>");
+    for(let i=0; i<9; i++) {
+      document.write("<th>" + (i+1) + "단</th>");
+    }
+    document.write("</tr>");
+    for(let i=0; i<9; i++) {
+      document.write("<tr>");
+      for(let j=0; j<9; j++) {
+        document.write("<td>" + (j+1) + "*" + (i+1) 
+                        + "=" + a[i][j] + "</td>");
+      }
+      document.write("</tr>");
+    }
+    
+    document.write("</table>");
+  </script>
+</body>
+</html>

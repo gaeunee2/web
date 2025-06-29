@@ -1,0 +1,48 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소수</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .box {
+            border: 1px solid black;
+            width: 50%;
+            margin: 10px auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let prime = function(num) {
+            if(num < 2) return false;
+            for(let i=2; i<num; i++) {
+                if(num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        let arr=[20, 15, 40, 2, 23];
+
+        document.write("<h1>익명 함수 사용</h1>");
+        for(let i of arr) {
+            document.write("<div class='box'>" + i + "는 ");
+
+            if(prime(i)) {
+                document.write("<b>소수이다.</b>");
+            }
+            else {
+                document.write("<b>소수가 아니다.</b>");
+            }
+            document.write("</div>");
+        }
+    </script>
+</body>
+</html>

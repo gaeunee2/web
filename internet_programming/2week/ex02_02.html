@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 연습</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <ul>
+            <li>표 연습1</li>
+            <table border="1px solid black">
+                <tr><th colspan="2">1행 1열</th></tr>
+                <tr><td rowspan="2">2행 1열</td>
+                    <td>2행 2열</td></tr>
+                <tr><td>3행 2열</td></tr>
+            </table>
+            <li>표 연습2</li>
+            <table border="1px solid black">
+                <tr><th>1행 1열</th>
+                    <th colspan="2">1행 2열</th></tr>
+                <tr><td>2행 1열</td>
+                    <td>2행 2열</td>
+                    <td>2행 3열</td></tr>
+            </table>
+            <caption>표1-2 열병합</caption>
+        </ul>
+    </section>
+</body>
+</html>

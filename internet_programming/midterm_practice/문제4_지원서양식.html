@@ -1,0 +1,49 @@
+<!--컴퓨터학과/20220745/김가은-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제4_지원서양식.html</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>동아리 회원 모집</h1>
+            <h4>컴퓨터 프로그래밍에 관심이 있는 새내기 환영합니다.</h4>
+            DDWU에서 동아리 회원을 모집합니다. 학년 및 전공에 상관 없습니다. 
+            평소 컴퓨터 프로그래밍에 관심 있었던 여러 학우의 많은 지원바랍니다.
+            <h4>모집기간은 3월 2일 ~ 3월 25일까지 입니다.</h4>
+        </div>
+
+        <form name="f4" action="send.jsp" method="post">
+        <fieldset>
+            <legend>동아리 지원서 양식</legend>
+            <h4>동덕여자대학교 학생만 지원 가능합니다.</h4>
+            <ul>
+                <li>이&nbsp;&nbsp;&nbsp;름 <input type="text" name="userName" size="20" maxlength="12"/>(실명으로 작성)</li>
+                <li>학&nbsp;&nbsp;&nbsp;과 <input type="text" name="dept" size="20" maxlength="12"/></li>
+                <li>학&nbsp;&nbsp;&nbsp;번 <input type="Email" size="20" maxlength="12" placeholder="예)2022000000"/></li>
+                <li>학&nbsp;&nbsp;&nbsp;년 <select>
+                            <option value="1">1학년</option>
+                            <option value="2">2학년</option>
+                            <option value="3">3학년</option>
+                            <option value="4">4학년</option>
+                          </select>
+                </li>
+                <li>이메일 <input type="email" name="mail" size="30"/></li>
+                <li>연락처 <input type="tel" name="phone" size="30" placeholder="하이픈(-)을 빼고 입력하세요"/></li>
+                <li>관심분야 <input type="checkbox" name="interestes" value="lang"/> 프로그래밍언어
+                            <input type="checkbox" name="interestes" value="ai" checked/> 인공지능
+                            <input type="checkbox" name="interestes" value="db"/> 데이터베이스
+                            <input type="checkbox" name="interestes" value="web"/> 웹개발<br>
+                </li>
+                <li>지원동기 <textarea name="motive" rows="5" cols="60"></textarea></li>
+            </ul>
+            <input type="submit" value="가입신청"/>
+            <input type="reset" value="작성취소"/>
+        </fieldset>
+        </form>
+    </section>
+</body>
+</html>

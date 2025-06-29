@@ -1,0 +1,45 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW10_2</title>
+</head>
+<body>
+    <script>
+        function getEvenSum(arr) {
+            let sum = 0;
+            for(let i of arr) {
+                if(i % 2 == 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+        function getFactor(num) {
+            let prime=[];
+
+            for(let i=1; i<=num; i++) {
+                if(num % i == 0) {
+                    prime.push(i);
+                }
+            }
+            return prime.join(' - ')
+        }
+
+        let arr=[];
+
+        for(let i=0; i<5; i++) {
+            arr[i] = parseInt(prompt((i+1) + "번째 정수를 입력하세요."));
+        }
+        
+        document.write("입력 데이터 배열 출력: " + arr.join());
+
+        let sum = getEvenSum(arr);
+        document.write("<br><hr>짝수 데이터의 합: " + sum);
+
+        document.write("<br><hr>합인 " + sum + "의 약수: " + getFactor(sum));
+    </script>
+</body>
+</html>
