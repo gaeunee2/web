@@ -1,0 +1,85 @@
+<!-- 컴퓨터학과 20220745 김가은 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1_나의 소개</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <style>
+        section {
+            width: 370px;
+            height: 240px;
+            float: left;
+            margin: 40px;
+            padding: 20px;
+            line-height: 1.0;
+            border-radius: 20px;
+            border: 1px dotted brown;
+            background-color: white;
+        }       
+        #italic {
+            font-style : italic; 
+        }
+        section h3 {
+            display: inline-block;
+            padding: 5px;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 3px yellow;
+        }
+        .left {
+            margin-left: 10px;
+        }
+        .right {
+            margin-left: 220px;
+        }
+        section ul, section ol {
+            margin-left: 30px;
+            padding-left: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <img src="images/logo.png">
+            <ul>
+                <li><a href="문제1_나의소개.html">나의 소개</a></li>
+                <li><a href="문제2_나의하루.html">나의 하루</a></li>
+            </ul>
+        </header>
+    <div>
+        <section>
+            <img src="images/note.png"><h3 class="left">Who am I?</h3><br>
+            이름은 김가은이며<br>
+            현재 동덕여자대학교 컴퓨터학과 다니고 있는 학생입니다.
+        </section>
+        <section>
+            <a class="right"><img src="images/note.png"><h3>좌우명</h3></a><br>
+            <a id="italic">후회없이 살자</a>
+        </section>
+        <section>
+            <img src="images/note.png"><h3 class="left">관심 및 선호</h3>
+            <ul>
+                <li>좋아하는 것</li>
+                <ol>
+                    <li>책</li>
+                    <li>단 거</li>
+                    <li>노래</li>
+                </ol>
+            </ul>
+            <ul>
+                <li>하고 싶은 것</li>
+                <ol>
+                    <li>창경궁 야간개장 가기</li>
+                    <li>해외여행 가기</li>
+                </ol>
+            </ul>
+        </section>
+        <section>
+            <a class="right"><img src="images/note.png"><h3>Future</h3></a><br>
+            미래의 나는 아주 멋있는 사람이 되어있을 것이다!! 야호~
+        </section>
+    </div>
+</body>
+</html>
